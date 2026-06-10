@@ -143,8 +143,28 @@ Supported statuses:
 
 # Order Lifecycle
 
-text Customer Places Order           │           ▼ Order Created           │           ▼ Invoice Generated           │           ▼ Boutique Receives Order           │           ▼ Order Confirmed           │           ▼ Order Packed           │           ▼ Out For Delivery           │           ▼ Delivered 
-
+Customer Places Order
+          │
+          ▼
+Order Created
+          │
+          ▼
+Invoice Generated
+          │
+          ▼
+Boutique Receives Order
+          │
+          ▼
+Order Confirmed
+          │
+          ▼
+Order Packed
+          │
+          ▼
+Out For Delivery
+          │
+          ▼
+Delivered
 ---
 
 # Invoice System
@@ -258,7 +278,18 @@ Cloudinary is integrated for:
 
 # Platform Architecture
 
-text Customer Marketplace         │         ▼      Next.js         │         ▼       Convex         │  ┌──────┼────────┬─────────┐  ▼      ▼        ▼         ▼ Clerk Cloudinary Resend Database Auth   Media     Email   Storage 
+Customer Marketplace
+        │
+        ▼
+     Next.js
+        │
+        ▼
+      Convex
+        │
+ ┌──────┼────────┬─────────┐
+ ▼      ▼        ▼         ▼
+Clerk Cloudinary Resend Database
+Auth   Media     Email   Storage 
 
 ---
 
@@ -307,7 +338,22 @@ Can:
 
 # Project Structure
 
-bash apps/ ├── customer/ ├── boutique/ ├── admin/  convex/ ├── orders.ts ├── products.ts ├── boutiques.ts ├── invoices.ts ├── emails.ts ├── users.ts  packages/ ├── ui/ ├── utils/ ├── types/ 
+apps/
+├── customer/
+├── admin/
+
+convex/
+├── orders.ts
+├── products.ts
+├── boutiques.ts
+├── invoices.ts
+├── emails.ts
+├── users.ts
+
+packages/
+├── ui/
+├── utils/
+├── types/ 
 
 ---
 
