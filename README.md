@@ -1,185 +1,159 @@
 # HIVE – Hyperlocal Boutique Fashion Marketplace
 
-A full-stack hyperlocal fashion marketplace connecting customers with independent fashion boutiques through a modern multi-tenant platform.
+HIVE is a full-stack hyperlocal fashion marketplace platform that connects customers with independent fashion boutiques through a unified digital ecosystem.
 
-HIVE enables customers to discover local boutique collections, place orders, track deliveries, and download invoices while providing dedicated management portals for boutique partners and marketplace administrators.
+The platform enables customers to discover boutique fashion, place orders, track deliveries, and access invoices, while providing dedicated management portals for boutique partners and marketplace administrators.
+
+Built using a modern TypeScript-based monorepo architecture, HIVE demonstrates a complete marketplace workflow from product discovery to order fulfillment.
 
 ---
 
 ## Overview
 
-HIVE is built as a marketplace ecosystem consisting of three independent applications:
+HIVE is designed as a multi-tenant marketplace platform consisting of three independent applications:
 
 ### Customer Marketplace
-A customer-facing shopping experience for discovering and purchasing boutique fashion products.
+A consumer-facing shopping platform for discovering and purchasing boutique fashion products.
 
 ### Boutique Partner Portal
-A seller dashboard that allows boutiques to manage products, inventory, and customer orders.
+A dedicated seller dashboard that enables boutiques to manage products, orders, inventory, and business operations.
 
 ### Marketplace Administration Console
-A centralized control panel for marketplace operations, boutique approvals, user management, and analytics.
+A centralized management system for marketplace operations, boutique onboarding, user administration, and platform monitoring.
 
 ---
 
-## Key Features
+# Core Features
 
-### Customer Marketplace
+## Customer Marketplace
 
-#### Authentication & Profile Management
+### Authentication & Account Management
 - Secure authentication using Clerk
-- User profile management
+- User registration and login
 - Session management
+- Customer profile management
 
-#### Product Discovery
+### Product Discovery
 - Homepage product discovery
-- Global product search
+- Global marketplace search
 - Category browsing
 - Collection browsing
 - Boutique discovery
 - Product recommendations
 
-#### Product Experience
-- Product gallery
-- Product details
+### Product Experience
+- Product galleries
+- Detailed product information
 - Boutique information
 - Size selection
-- Stock visibility
 - Delivery information
+- Product media support
 
-#### Cart & Checkout
+### Cart & Checkout
 - Shopping cart management
+- Quantity management
 - Address management
-- Delivery scheduling
-- Order summary
+- Delivery slot selection
 - Order placement
 
-#### Order Management
+### Order Management
 - Order history
 - Order tracking
-- Real-time status updates
+- Status timeline
 - Invoice downloads
 
-#### Delivery Validation
-- Radius-based serviceability checks
-- Coordinate-based location validation
-- Browse Products Anyway mode for non-serviceable locations
+### Delivery Validation
+- Hyperlocal serviceability validation
+- Radius-based delivery checks
+- Coordinate-based location verification
+- Browse Products Anyway mode
 
 ---
 
-### Boutique Partner Portal
+## Boutique Partner Portal
 
-#### Boutique Management
+### Boutique Management
 - Boutique profile management
+- Store information updates
 - Delivery radius configuration
-- Store information management
 
-#### Product Management
+### Product Management
 - Create products
 - Edit products
 - Delete products
-- Manage product inventory
-- Upload product media
-- Manage product categories
+- Upload product images
+- Manage inventory
+- Category assignment
 
-#### Order Management
-- View customer orders
-- Update order status
-- Track order progress
-- Access order invoices
+### Order Management
+- View incoming orders
+- View customer details
+- Update order statuses
+- Download invoices
 
-Supported order statuses:
+Supported statuses:
 
 - Confirmed
 - Packed
 - Out For Delivery
 - Delivered
 
-#### Business Dashboard
+### Business Dashboard
 - Revenue metrics
-- Order statistics
-- Delivery insights
+- Order analytics
+- Delivery statistics
 - Performance overview
 
 ---
 
-### Marketplace Administration Console
+## Marketplace Administration Console
 
-#### User Management
+### User Management
 - View platform users
-- Role management
-- User monitoring
+- Manage user roles
+- Monitor platform activity
 
-#### Boutique Management
+### Boutique Management
 - Boutique approval workflow
 - Boutique verification
 - Boutique monitoring
 
-#### Product Oversight
-- Marketplace-wide product monitoring
-- Product moderation
-
-#### Category Management
+### Category Management
 - Create categories
 - Edit categories
 - Delete categories
 
-#### Banner Management
-- Homepage promotional banners
-- Marketing content management
+### Banner Management
+- Homepage banner administration
+- Marketing content control
 
-#### Order Monitoring
+### Order Monitoring
 - View all marketplace orders
-- Monitor delivery lifecycle
+- Monitor order lifecycles
 - Access invoices
-- Customer and boutique details
+- View customer and boutique information
 
-#### Marketplace Analytics
+### Marketplace Analytics
 - Revenue insights
-- Order analytics
-- Boutique metrics
-- Platform statistics
+- Order statistics
+- Boutique performance metrics
+- Platform-wide monitoring
 
 ---
 
 # Order Lifecycle
 
-Customer places order
-
-↓
-
-Order Created
-
-↓
-
-Boutique Receives Order
-
-↓
-
-Order Confirmed
-
-↓
-
-Order Packed
-
-↓
-
-Out For Delivery
-
-↓
-
-Delivered
-
-↓
-
-Invoice Available
+text Customer Places Order           │           ▼ Order Created           │           ▼ Invoice Generated           │           ▼ Boutique Receives Order           │           ▼ Order Confirmed           │           ▼ Order Packed           │           ▼ Out For Delivery           │           ▼ Delivered 
 
 ---
 
 # Invoice System
 
-The platform automatically generates invoices for completed orders.
+Invoices are automatically generated immediately after a customer successfully places an order.
 
-Invoices are accessible to:
+Generated invoices are permanently linked to their corresponding orders and remain accessible throughout the order lifecycle.
+
+Invoices can be accessed by:
 
 - Customers
 - Boutique Partners
@@ -187,12 +161,15 @@ Invoices are accessible to:
 
 Invoice details include:
 
-- Order Information
+- Invoice Number
+- Order Number
 - Customer Information
 - Boutique Information
-- Product Breakdown
+- Product Details
+- Quantity Breakdown
 - Pricing Summary
 - Delivery Information
+- Transaction Information
 
 ---
 
@@ -201,28 +178,30 @@ Invoice details include:
 Transactional email infrastructure powered by Resend.
 
 ### Customer Notifications
+
 - Order Confirmed
 - Order Packed
 - Out For Delivery
 - Order Delivered
 
 ### Boutique Notifications
+
 - New Order Received
 - Order Delivered Confirmation
 
 ---
 
-# Delivery Intelligence
+# Hyperlocal Delivery Engine
 
-HIVE uses coordinate-based delivery validation.
+HIVE uses coordinate-based delivery validation to determine serviceability.
 
-Delivery eligibility is determined using:
+Delivery eligibility is calculated using:
 
 - Customer coordinates
 - Boutique coordinates
 - Boutique delivery radius
 
-This allows accurate hyperlocal delivery coverage without relying on city-based restrictions.
+This approach enables accurate hyperlocal delivery coverage without relying on city-level restrictions.
 
 ---
 
@@ -235,8 +214,8 @@ Cloudinary is integrated for:
 - Boutique verification documents
 - Customer claim evidence uploads
 - CDN delivery
+- Image transformations
 - Responsive image optimization
-- Media transformations
 - Video asset delivery
 
 ---
@@ -271,7 +250,7 @@ Cloudinary is integrated for:
 
 - Resend
 
-## Monorepo Architecture
+## Monorepo
 
 - Turborepo
 
@@ -285,43 +264,50 @@ text Customer Marketplace         │         ▼      Next.js         │      
 
 # Security & Access Control
 
-### Customers
+### Customer
 
 Can:
+
 - Browse products
 - Place orders
 - Track orders
 - Download invoices
 
 Cannot:
-- Access boutique management
-- Access admin controls
 
-### Boutique Partners
+- Access boutique management
+- Access administration controls
+
+### Boutique Partner
 
 Can:
+
 - Manage own products
 - Manage own orders
 - Update order statuses
+- Access invoices
 
 Cannot:
-- Access admin controls
+
+- Access administration controls
 - Manage other boutiques
 
-### Administrators
+### Administrator
 
 Can:
+
 - Manage users
 - Manage boutiques
 - Manage categories
 - Manage banners
 - Monitor marketplace activity
+- Access all orders
 
 ---
 
 # Project Structure
 
-bash apps/ ├── customer/ ├── admin/  convex/ ├── orders.ts ├── products.ts ├── boutiques.ts ├── invoices.ts ├── emails.ts ├── users.ts  packages/ ├── ui/ ├── utils/ ├── types/ 
+bash apps/ ├── customer/ ├── boutique/ ├── admin/  convex/ ├── orders.ts ├── products.ts ├── boutiques.ts ├── invoices.ts ├── emails.ts ├── users.ts  packages/ ├── ui/ ├── utils/ ├── types/ 
 
 ---
 
@@ -342,7 +328,7 @@ bash apps/ ├── customer/ ├── admin/  convex/ ├── orders.ts ├
 - Customer, Boutique, and Admin applications
 - Hyperlocal delivery validation engine
 - Real-time order management system
-- Automated invoice generation
+- Automatic invoice generation
 - Responsive mobile-first design
 - Cloud-based media infrastructure
 - Transactional email notification system
@@ -356,4 +342,4 @@ bash apps/ ├── customer/ ├── admin/  convex/ ├── orders.ts ├
 
 Yedukrishnan K R
 
-HIVE was developed as a full-stack marketplace platform demonstrating modern web application architecture, real-time backend systems, hyperlocal commerce workflows, role-based access control, and scalable marketplace operations.
+HIVE was developed as a full-stack hyperlocal marketplace platform demonstrating modern web architecture, real-time backend systems, role-based access control, media infrastructure, transactional workflows, and scalable marketplace operations.
